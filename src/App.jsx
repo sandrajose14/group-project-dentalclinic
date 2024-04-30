@@ -2,7 +2,7 @@
 import './App.css'
 import Header from './components/Header'
 import Footer from './components/Footer'
-import Home from './pages/Home'
+import Homee from '../src/pages/Homee'
 import Treatment from './pages/Treatment'
 import Doctor from './pages/Doctors'
 import Testimonial from './pages/Testimonial'
@@ -17,7 +17,7 @@ function App() {
     <>
     <Header/>
     <Routes>
-      <Route path='/' element={<Home/>}/>
+      <Route path='/' element={<Homee/>}/>
       <Route path='/treatment' element={<Treatment/>}/>
       <Route path='/treatment/doctor' element={<Doctor/>}/>
       <Route path='/testimonial' element={<Testimonial/>}/>
