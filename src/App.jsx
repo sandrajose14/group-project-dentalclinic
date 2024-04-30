@@ -9,7 +9,8 @@ import Testimonial from './pages/Testimonial'
 import Contactus from './pages/Contactus'
 import Authentication from './components/Authentication'
 import { Route, Routes } from 'react-router-dom'
-
+import ViewBooking from './pages/ViewBooking'
+import Profile from './pages/Profile'
 function App() {
   
 
@@ -20,10 +21,12 @@ function App() {
       <Route path='/' element={<Homee/>}/>
       <Route path='/treatment' element={<Treatment/>}/>
       <Route path='/treatment/doctor' element={<Doctor/>}/>
-      <Route path='/testimonial' element={<Testimonial/>}/>
+      <Route path='/feedback' element={<Testimonial/>}/>
       <Route path='/contact' element={<Contactus/>}/>
       <Route path='/login' element={<Authentication/>}/>
       <Route path='/register' element={<Authentication register/>}/>
+      <Route path='/viewbooking' element={<ViewBooking/>}/>
+      <Route path='/profile' element={<Profile/>}/>
     </Routes>
     <Footer/>
     </>
