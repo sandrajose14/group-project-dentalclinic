@@ -1,8 +1,7 @@
-.box4 img{
-    height: 300px;
-    width:380px;
-    object-fit: cover;
+.box4 {
+    transition: transform 0.3s ease;
 }
-.box4:hover{
+
+.box4:hover {
     transform: scale(1.10);
 }
