@@ -1,0 +1,10 @@
+.crd{
+    background-color:white;
+    opacity: .8;
+    transition: transform 0.3s;
+    border: solid 1px white;
+}
+.crd:hover{
+    transform: scale(1.1);
+    opacity: 1;
+}
