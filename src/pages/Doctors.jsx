@@ -32,7 +32,7 @@ function Doctors() {
 
     return (
         <div>
-            <h1 className='text-center text-primary mt-5 mb-4'>Doctors</h1>
+            <h1 className='text-center text-primary mt-5 mb-4 fw-bold'>Doctors</h1>
             <div className="container">
                 <div className="row row-cols-1 row-cols-md-3 g-4">
                     {doctors.map((doctor) => (
