@@ -12,7 +12,7 @@ const Treatment = () => {
   const [treatments] = useState([
     { name: 'Dental Bonding', image: bonding },
     { name: 'Root Canal Treatment', image: root },
-    { name: 'Tooth cleaning', image: toothcleaning },
+    { name: 'Tooth Cleaning', image: toothcleaning },
     { name: 'Dental Implants', image: implants },
     { name: 'Cosmetic Dentistry', image: cosmetic },
     { name: 'Other Treatments', image: others },
