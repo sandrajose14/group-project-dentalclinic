@@ -43,7 +43,18 @@ function Doctors() {
                                     <h5 className="card-title">{doctor.name}</h5>
                                     <p className="card-text">{doctor.experience}</p>
                                     <p className="card-text">{doctor.specialty}</p>
-                                    <Button onClick={handleShowModal} className='btn btn-primary w-50 h-50' >Book an Appointment</Button>
+                                    <Button 
+    onClick={handleShowModal} 
+    className='btn btn-primary' 
+    style={{ 
+        width: '180px', 
+        whiteSpace: 'nowrap',
+        padding: '10px 10px' 
+    }}
+>
+    Book an Appointment
+</Button>
+
                                 </div>
                             </div>
                         </div>
