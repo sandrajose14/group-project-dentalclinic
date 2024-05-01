@@ -7,9 +7,12 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAddressBook, faBook, faCapsules,  faStethoscope,  faUser} from '@fortawesome/free-solid-svg-icons'
 import {  faRocketchat } from '@fortawesome/free-brands-svg-icons'
 import { Link as ScrollLink } from "react-scroll";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 function Header() {
+    const location = useLocation();
+    const isHomePage = location.pathname === '/';
+
     return (
         <>
             <Navbar expand="lg" className="bg-black" style={{ height: '65px' }}>
@@ -35,9 +38,15 @@ function Header() {
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="me-auto d-flex justify-content-evenly w-100 fw-bold fs-5">
-                            <ScrollLink  to="about-section" spy={true} smooth={true} duration={500} className="text-white" style={{ textDecoration: 'none', color: 'white',cursor:'pointer' }}>
-                                About Us <span><FontAwesomeIcon icon={faStethoscope} fade style={{ color: "cyan" }} /></span>
-                            </ScrollLink>
+                            {isHomePage ? (
+                                <ScrollLink to="about-section" spy={true} smooth={true} duration={500} className="text-white" style={{ textDecoration: 'none', color: 'white',cursor:'pointer' }}>
+                                    About Us <span><FontAwesomeIcon icon={faStethoscope} fade style={{ color: "cyan" }} /></span>
+                                </ScrollLink>
+                            ) : (
+                                <Link to="/" className="text-white" style={{ textDecoration: 'none', color: 'white' }}>
+                                    About Us <span><FontAwesomeIcon icon={faStethoscope} fade style={{ color: "cyan" }} /></span>
+                                </Link>
+                            )}
                             <Link to="/treatment" className="text-white" style={{ textDecoration: 'none', color: 'white' }}>
                                 Services <span><FontAwesomeIcon icon={faCapsules} fade style={{ color: "cyan" }} /></span>
                             </Link>
