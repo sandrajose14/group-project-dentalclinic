@@ -16,15 +16,10 @@ function Appointment({ show, handleClose }) {
             </div>
             <div className="col-md-6">
               <input type="text" placeholder='Name of Patient' className='form-control mb-3' />
+              <input type="number" placeholder='Age' className='form-control mb-3' />
               <input type="date" placeholder='Date' className='form-control mb-3' />
               <input type="time" placeholder='Time' className='form-control mb-3' />
               <input type="text" placeholder='Treatment' className='form-control mb-3' />
-              <select style={{ width: '100%', height: '38px', border: '1px solid lightgrey', borderRadius: '5px', marginBottom: '10px' }} name="" id="" >
-                <option value="" selected>Select a Doctor</option>
-                <option value="">Dr.Max Deo</option>
-                <option value="">Dr.Maria Elizabeth</option>
-                <option value="">Dr.James Alex</option>
-              </select>
               <textarea className='border grey rounded p-2' style={{ borderColor: 'grey', width: '100%', marginBottom: '10px' }} cols="47" rows="4" placeholder='Description (Optional)'></textarea>
             </div>
           </div>
