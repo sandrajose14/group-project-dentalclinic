@@ -32,7 +32,7 @@ function Appointment({ show, handleClose }) {
       </Modal.Body>
       <Modal.Footer>
        
-        <Button variant="primary rounded" onClick={handleClose}>
+        <Button variant="primary" onClick={handleClose}>
           Book Now
         </Button>
       </Modal.Footer>
