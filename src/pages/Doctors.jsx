@@ -32,18 +32,18 @@ function Doctors() {
 
     return (
         <div>
-            <h1 className='text-center text-primary mt-5 mb-4 fw-bold'>Doctors</h1>
-            <div className="container">
+            <h1 className='text-center text-primary mt-5 mb-4 fw-bold mb-5'>Doctors</h1>
+            <div className="container mb-5 mt-5">
                 <div className="row row-cols-1 row-cols-md-3 g-4">
                     {doctors.map((doctor) => (
                         <div className="col">
-                            <div className="card h-100 box4">
+                            <div className="card box4 shadow">
                                 <img src={doctor.image} className="card-img-top" alt="" />
                                 <div className="card-body">
                                     <h5 className="card-title">{doctor.name}</h5>
                                     <p className="card-text">{doctor.experience}</p>
                                     <p className="card-text">{doctor.specialty}</p>
-                                    <Button onClick={handleShowModal} className='btn btn-primary rounded mt-3'>Book an Appointment</Button>
+                                    <Button onClick={handleShowModal} className='btn btn-primary w-50 h-100' >Book an Appointment</Button>
                                 </div>
                             </div>
                         </div>
