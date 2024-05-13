@@ -4,8 +4,9 @@ import Appointment from '../components/Appointment';
 import './Doctors.css'
 
 function Doctors() {
-    const [showModal, setShowModal] = useState(false);
 
+    const [showModal, setShowModal] = useState(false);
+    
     const handleShowModal = () => setShowModal(true);
     const handleCloseModal = () => setShowModal(false);
     
@@ -43,15 +44,17 @@ function Doctors() {
                                     <h5 className="card-title">{doctor.name}</h5>
                                     <p className="card-text">{doctor.experience}</p>
                                     <p className="card-text">{doctor.specialty}</p>
-                                    <Button onClick={handleShowModal} className='btn btn-primary w-50 h-50' >Book an Appointment</Button>
+                                    <Button onClick={handleShowModal}  className='btn btn-primary w-50' >Book an Appointment </Button>
                                 </div>
                             </div>
+                            <Appointment show={showModal} handleClose={handleCloseModal}  />
+
                         </div>
                     ))}
                 </div>
+                
             </div>
 
-            <Appointment show={showModal} handleClose={handleCloseModal}/>
         </div>
     );
 }

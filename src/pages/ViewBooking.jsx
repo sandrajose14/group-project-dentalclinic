@@ -1,9 +1,25 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './viewbooking.css'; // Import CSS file for custom styling
 import { Link } from 'react-router-dom';
+import { getAllBooking } from '../services/callApi';
 
 
 function ViewBooking() {
+
+
+
+
+  /* const getBooking = async()=>{
+    const response = await getAllBooking()
+    console.log(response);
+  }
+
+  useEffect(()=>{
+    getBooking()
+  },[])
+ */
+
+
   return (
     <div className="container-fluid view-booking-container">
       <h2 className="text-center mb-4">View Bookings</h2>
