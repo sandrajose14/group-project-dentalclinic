@@ -1,3 +1,4 @@
+// Treatment.js
 import React, { useState } from 'react';
 import { Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
@@ -29,8 +30,8 @@ const Treatment = () => {
               <img src={treatment.image} className="card-img-top shadow" style={{width:'250px',height:'250px'}} />
               <div className="card-body d-flex flex-column align-items-center">
                 <h5 className="card-title fw-bold fs-5">{treatment.name}</h5>
-                <Link to={'/treatment/doctor'}>
-                  <Button className="btn btn-primary mt-2">Book Now</Button>
+                <Link to={`/treatment/doctor/${encodeURIComponent(treatment.name)}`}>
+                  <Button  className="btn btn-primary mt-2">Book Now</Button>
                 </Link>
               </div>
             </div>

@@ -1,14 +1,36 @@
-import React, { useState } from 'react';
+// Doctors.js
+import React, { useState, useEffect } from 'react';
 import { Button } from 'react-bootstrap';
+import { useParams } from 'react-router-dom';
 import Appointment from '../components/Appointment'; 
-import './Doctors.css'
 
-function Doctors() {
-    const [showModal, setShowModal] = useState(false);
+function Doctors({userEmail}) {
+    const [selectedDoctor, setSelectedDoctor] = useState(null);
+    const { treatmentName } = useParams();
 
-    const handleShowModal = () => setShowModal(true);
-    const handleCloseModal = () => setShowModal(false);
-    
+    useEffect(() => {
+        // console.log(treatmentName);
+    }, [treatmentName]);
+    const handleShowModal = (doctor) => {
+        // Check if user is logged in
+        const isLoggedIn = sessionStorage.getItem('isLoggedIn') === 'true';
+      
+        if (isLoggedIn) {
+          setSelectedDoctor(doctor);
+        } else {
+          // Redirect to login page with a message
+          alert('please login to book an appointment');
+          handleLogin((userEmail) => {
+            setSelectedDoctor(doctor);
+            setUserEmail(userEmail);
+          });
+        }
+      };
+
+    const handleCloseModal = () => {
+        setSelectedDoctor(null);
+    }
+
     const doctors = [
         {
             name: "Dr. Max Deo",
@@ -32,29 +54,21 @@ function Doctors() {
 
     return (
         <div>
-            <h1 className='text-center text-primary mt-5 mb-4 fw-bold mb-5'>Doctors</h1>
-            <div className="container mb-5 mt-5">
-                <div className="row row-cols-1 row-cols-md-3 g-4">
-                    {doctors.map((doctor) => (
-                        <div className="col">
+            <h1 className='text-center text-primary mt-5 mb-4 fw-bold '>Doctors</h1>
+            <div className="container mb-5">
+                <h5 className='d-flex justify-content-center text-primary mb-3'>Treatment you selected :-<span className='text-warning fw-bold mx-1'>{treatmentName ? decodeURIComponent(treatmentName) : ""}</span></h5>
+                <div className="row row-cols-1 row-cols-md-3 ">
+                    {doctors.map((doctor, index) => (
+                        <div className="col" key={index}>
                             <div className="card box4 shadow">
                                 <img src={doctor.image} className="card-img-top" alt="" />
                                 <div className="card-body">
                                     <h5 className="card-title">{doctor.name}</h5>
                                     <p className="card-text">{doctor.experience}</p>
                                     <p className="card-text">{doctor.specialty}</p>
-                                    <Button 
-    onClick={handleShowModal} 
-    className='btn btn-primary' 
-    style={{ 
-        width: '180px', 
-        whiteSpace: 'nowrap',
-        padding: '10px 10px' 
-    }}
->
-    Book an Appointment
-</Button>
-
+                                    <div style={{ width: '150px' }}>
+                                        <Button onClick={() => handleShowModal(doctor)} className='btn btn-primary btn-sm form-control'>Book an Appointment</Button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -62,7 +76,8 @@ function Doctors() {
                 </div>
             </div>
 
-            <Appointment show={showModal} handleClose={handleCloseModal}/>
+            {selectedDoctor && <Appointment show={true} handleClose={handleCloseModal} selectedDoctor={selectedDoctor} selectedTreatment={treatmentName} userEmail={userEmail} />}
+
         </div>
     );
 }
