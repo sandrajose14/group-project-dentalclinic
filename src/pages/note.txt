@@ -6,7 +6,7 @@ import React, { useState } from 'react';
 import './Authentication.css';
 import { RegisterApi, loginApi } from '../services/callApi';
 
-function Authentication({ setIsLoggedIn,setUserEmail }) {
+function Authentication({ setIsLoggedIn }) {
   const [register, setRegister] = useState({
     userName: '',
     userEmail: '',
@@ -52,41 +52,37 @@ function Authentication({ setIsLoggedIn,setUserEmail }) {
     }
   };
 
- 
-  const handleLogin = async () => {
-    try {
-      const response = await loginApi();
-      if (response.status >= 200 && response.status < 300) {
-        const users = response.data;
-        const { userEmail, userPassword } = login;
-        let validUser = false;
+ const handleLogin = async () => {
+  try {
+    const response = await loginApi();
+    if (response.status >= 200 && response.status < 300) {
+      const users = response.data;
+      const { userEmail, userPassword } = login;
+      let validUser = false;
 
-        for (let user of users) {
-          if (user.userEmail === userEmail && user.userPassword === userPassword) {
-            validUser = true;
-            break;
-          }
+      for (let user of users) {
+        if (user.userEmail === userEmail && user.userPassword === userPassword) {
+          validUser = true;
+          break;
         }
-
-        if (validUser) {
-          alert('Logged in successfully');
-          setIsLoggedIn(true); /// Update the isLoggedIn state
-          setUserEmail(userEmail);
-          sessionStorage.setItem('isLoggedIn', true); // Store login state in sessionStorage
-          sessionStorage.setItem('userEmail', userEmail); // Store user email in sessionStorage
-          window.location.href = '/';
-        } else {
-          alert('Invalid credentials');
-        }
-      } else {
-        console.error('Login API request failed with status:', response.status);
-        alert('Failed to log in. Please try again later.');
       }
-    } catch (error) {
-      console.error('Error logging in:', error);
-      alert('Something went wrong');
+
+      if (validUser) {
+        alert('Logged in successfully');
+        setIsLoggedIn(true); // Update the isLoggedIn state
+        window.location.href = '/';
+      } else {
+        alert('Invalid credentials');
+      }
+    } else {
+      console.error('Login API request failed with status:', response.status);
+      alert('Failed to log in. Please try again later.');
     }
-  };
+  } catch (error) {
+    console.error('Error logging in:', error);
+    alert('Something went wrong');
+  }
+};
 
 
   const [isSignUpMode, setIsSignUpMode] = useState(false);

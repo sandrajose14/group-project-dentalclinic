@@ -17,7 +17,7 @@ function Homee() {
             <div className="col-md-6 mt-3 pt-3">
               <h1 className='text-light pt-5 fw-bold '><FontAwesomeIcon icon={faTooth} size='xl' bounce style={{ color: "white", }} />  DENTAKAY Clinic</h1>
               <p className='p-3 text-light'>Everyone here at DENTAKAY is dedicated to your well-being, and we make that clear from the moment you enter our clinic . We provide you with the best treatment options available, all administered by our highly trained doctors and staffs. Our doctors who listens to your unique concerns and responds to your needs, giving you painless, quick, and easy treatment. Whether you’re looking for cosmetic dentistry or treatment for any dental condition, our staff works hard to make sure that you are comfortable and healthy. </p>
-              <button style={{backgroundColor:'#427D9D',color:'#DDF2FD'}} className='btn  ms-3'>Get Started...</button>
+              
             </div>
           </div>
         </div>

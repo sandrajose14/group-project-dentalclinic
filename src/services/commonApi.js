@@ -1,21 +1,20 @@
-//axios configuration
-import axios from "axios"
+import axios from "axios";
 
-
-export const commonApi=async(httpmethod,url,reqBody)=>
-{
-    let requestConfig={
-        method:httpmethod,
-        url,
-        data:reqBody,
-        Headers:{
-            "Content-Type":"application/json"
-        }
+export const commonApi = async (httpMethod, url, reqBody) => {
+  let requestConfig = {
+    method: httpMethod,
+    url,
+    data: reqBody,
+    headers: {
+      "Content-Type": "application/json"
     }
-    return await axios(requestConfig).then((result)=>{
-        return result
-    }).catch((error)=>{
-        return error
-    })
-}
-//finally exporting
+  };
+
+  try {
+    const result = await axios(requestConfig);
+    return result;
+  } catch (error) {
+    console.error('Error in commonApi:', error);
+    throw error;
+  }
+};
