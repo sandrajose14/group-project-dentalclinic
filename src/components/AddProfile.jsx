@@ -10,6 +10,7 @@ function AddProfile({ setUploadProfile }) {
     phoneNumber: '',
     gender: ''
   });
+  const userEmail = sessionStorage.getItem('userEmail'); // Retrieve userEmail from sessionStorage
   const [profiles, setProfiles] = useState([]);
   const [isProfileAdded, setIsProfileAdded] = useState(false);
   const [updateId, setUpdateId] = useState(null); 
@@ -35,7 +36,7 @@ function AddProfile({ setUploadProfile }) {
       setShow(true);
     } else {
       // Redirect to login page with a message
-      alert('plase login to create a profile')
+      alert('Please login to create a profile');
       window.location.href = '/login';
     }
   };
@@ -44,7 +45,8 @@ function AddProfile({ setUploadProfile }) {
     try {
       const response = await getprofileApi();
       if (response.status >= 200 && response.status < 300) {
-        setProfiles(response.data);
+        const userProfiles = response.data.filter(profile => profile.userEmail === userEmail);
+        setProfiles(userProfiles);
       } else {
         alert('Something went wrong while fetching profiles');
       }
@@ -59,15 +61,15 @@ function AddProfile({ setUploadProfile }) {
       alert('Please fill the form completely');
     } else {
       try {
-        const response = await profileApi(formData);
+        const response = await profileApi({ ...formData, userEmail });
         if (response.status >= 200 && response.status < 300) {
           alert('Profile created successfully');
           setUploadProfile(response.data);
           setFormData({
-            name: "",
-            email: "",
-            phoneNumber: "",
-            gender: ""
+            name: '',
+            email: '',
+            phoneNumber: '',
+            gender: ''
           });
           setIsProfileAdded(true);
           localStorage.setItem('isProfileAdded', 'true');
@@ -83,7 +85,6 @@ function AddProfile({ setUploadProfile }) {
     }
   };
 
-
   const handleUpdate = (id, profile) => {
     setFormData(profile); 
     setUpdateId(id); 
@@ -93,7 +94,6 @@ function AddProfile({ setUploadProfile }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (updateId) {
-    
       updateProfile(updateId, formData)
         .then((response) => {
           if (response.status >= 200 && response.status < 300) {
@@ -109,7 +109,6 @@ function AddProfile({ setUploadProfile }) {
           alert('Something went wrong');
         });
     } else {
-     
       handleUpload();
     }
   };
@@ -117,7 +116,7 @@ function AddProfile({ setUploadProfile }) {
   return (
     <div>
       <Container>
-      <Row className="justify-content-center mt-5">
+        <Row className="justify-content-center mt-5">
           <Col className="text-center">
             <h2 className='text-primary'>Profile Management</h2>
             {profiles.length === 0 && ( // Check if there are no profiles
@@ -212,7 +211,7 @@ function AddProfile({ setUploadProfile }) {
             <div className="d-flex flex-wrap justify-content-center">
               {profiles.length > 0 ? (
                 profiles.map((profile, index) => (
-                  <Card key={index} className="mb-3 mx-2 profile-card w-100 p-3" style={{ backgroundColor: "lavender" }}>
+                  <Card key={index} className="mb-3 mx-2 profile-card w-100 p-3" style={{ backgroundColor: 'lavender' }}>
                     <Card.Body className="card-body">
                       <Card.Text className="card-text d-flex justify-content-center">
                         <div>
@@ -237,10 +236,10 @@ function AddProfile({ setUploadProfile }) {
                   </Card>
                 ))
               ) : (
-               <>
-                  <p className="text-center">No profiles available.</p>
-                  <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/Silhouette_Mr_Pipo.gif" alt="" />
-               </>
+                <>
+                 
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/Silhouette_Mr_Pipo.gif" alt="No profiles" />
+                </>
               )}
             </div>
           </Col>
@@ -251,4 +250,3 @@ function AddProfile({ setUploadProfile }) {
 }
 
 export default AddProfile;
-                 

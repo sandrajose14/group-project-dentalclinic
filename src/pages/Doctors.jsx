@@ -20,10 +20,7 @@ function Doctors({userEmail}) {
         } else {
           // Redirect to login page with a message
           alert('please login to book an appointment');
-          handleLogin((userEmail) => {
-            setSelectedDoctor(doctor);
-            setUserEmail(userEmail);
-          });
+         
         }
       };
 

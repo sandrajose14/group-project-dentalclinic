@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, Navigate } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Homee from '../src/pages/Homee';
@@ -23,7 +23,6 @@ function App() {
       setUserEmail(storedUserEmail);
     }
   }, []);
-  
 
   return (
     <>
@@ -42,10 +41,16 @@ function App() {
           path='/register'
           element={<Authentication setIsLoggedIn={setIsLoggedIn} setUserEmail={setUserEmail} register />}
         />
-         {isLoggedIn && (
+        {isLoggedIn && (
           <>
             <Route path='/viewbooking' element={<ViewBooking userEmail={userEmail} />} />
             <Route path='/profile' element={<Profile />} />
+          </>
+        )}
+        {!isLoggedIn && (
+          <>
+            <Route path='/viewbooking' element={<Navigate to='/login' />} />
+            <Route path='/profile' element={<Navigate to='/login' />} />
           </>
         )}
       </Routes>

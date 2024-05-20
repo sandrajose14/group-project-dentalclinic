@@ -28,3 +28,10 @@ export const updateProfile = async (id, reqBody) => {
 export const loginApi =  async()=>{
    return await commonApi('GET',`${serverURL}/auth`,"")
 }
+//api for feedback
+export const feedbackApi = async(reqbody)=>{
+   return await commonApi('POST',`${serverURL}/feedback`,reqbody)
+}
+export const getFeedback =  async()=>{
+   return await commonApi('GET',`${serverURL}/feedback`,"")
+}
