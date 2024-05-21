@@ -1,1 +1,1 @@
-export const serverURL = 'http://localhost:4009'
+export const serverURL = 'https://dental-clinic-server-2.onrender.com'
