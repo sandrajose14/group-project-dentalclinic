@@ -3,7 +3,7 @@ import './Homee.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTooth } from '@fortawesome/free-solid-svg-icons/faTooth';
 import Service from '../components/Service';
-import Feedback from '../components/Feedback';
+
 
 function Homee() {
   return (
