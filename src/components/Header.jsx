@@ -39,7 +39,7 @@ function Header() {
           <Link to={'/'} style={{ textDecoration: 'none' }}>
             <Navbar.Brand className="text-white d-flex align-items-center">
               <img src="https://cdnl.iconscout.com/lottie/premium/thumb/laser-dental-filling-6736107-5583527.gif" alt="" style={{ width: '50px', marginLeft: '20px', borderRadius: '20px', height: '50px' }} />
-              <h5 className="ms-2 fw-bold mt-1 fs-4" style={{ backgroundImage: 'linear-gradient(45deg, darkcyan, lightcyan)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', fontFamily: '-moz-initial' }}>DENTAKAY</h5>
+              <h5 className="ms-2 fw-bold mt-1 fs-4" style={{ backgroundImage: 'linear-gradient(45deg, darkcyan, lightcyan)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', fontFamily: '-moz-initial' }}>DENTAKAY </h5>
               
             </Navbar.Brand>
           </Link>
