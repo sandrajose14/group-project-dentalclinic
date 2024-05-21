@@ -31,19 +31,23 @@ function Header() {
 
   return (
     <>
+     <div className="d-flex justify-content-center align-items-ceter  text-white" style={{height:'22px',backgroundColor:'black'}}>
+      <p>{userEmail}</p>
+     </div>
       <Navbar expand="lg" className="bg-black" style={{ height: '65px' }}>
         <Container fluid>
           <Link to={'/'} style={{ textDecoration: 'none' }}>
             <Navbar.Brand className="text-white d-flex align-items-center">
               <img src="https://cdnl.iconscout.com/lottie/premium/thumb/laser-dental-filling-6736107-5583527.gif" alt="" style={{ width: '50px', marginLeft: '20px', borderRadius: '20px', height: '50px' }} />
               <h5 className="ms-2 fw-bold mt-1 fs-4" style={{ backgroundImage: 'linear-gradient(45deg, darkcyan, lightcyan)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', fontFamily: '-moz-initial' }}>DENTAKAY</h5>
+              
             </Navbar.Brand>
           </Link>
 
           <Nav className="ms-auto">
             {isLoggedIn ? (
               <>
-                <span className="text-white me-3 mt-3">{userEmail}</span>
+                
                 <Button className='btn btn-outline-light rounded me-3 form-control' style={{ height: '35px', width: '75px' }} onClick={handleLogout}>Logout</Button>
               </>
             ) : (
