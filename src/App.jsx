@@ -31,6 +31,7 @@ function App() {
         <Route path='/' element={<Homee />} />
         <Route path='/treatment' element={<Treatment />} />
         <Route path='/treatment/doctor/:treatmentName' element={<Doctor />} />
+       
         <Route path='/feedback' element={<Testimonial />} />
         <Route path='/contact' element={<Contactus />} />
         <Route

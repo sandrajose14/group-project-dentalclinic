@@ -13,8 +13,14 @@
 }
 
 .social-icon {
-    font-size: 15px;
+    
+    color: white;
+
 }
+.social-links a:hover {
+    color: blue;
+}
+
 
 .list-unstyled li {
     margin-bottom: 10px;

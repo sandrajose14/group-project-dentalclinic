@@ -7,7 +7,7 @@ import './Footer.css'; // Import CSS for additional styling
 
 function Footer() {
     return (
-        <footer className="bg-dark text-white py-5">
+        <footer className="bg-dark  py-5">
             <div className="container">
                 <div className="row">
                     <div className="col-lg-4 mb-4 mb-lg-0">
@@ -20,10 +20,10 @@ function Footer() {
 
                     <div className="col-lg-3 mb-4 mb-lg-0">
                         <div className="Services">
-                            <h4 className='text-primary fw-bold'>Services <FontAwesomeIcon icon={faNotesMedical} className="icon" /></h4>
+                            <h4 className='text-primary fw-bold'>Our page <FontAwesomeIcon icon={faNotesMedical} className="icon" /></h4>
                             <ul className="list-unstyled mt-4">
                                 <li><Link to='/login' className='text-white'>Login</Link></li>
-                                <li><Link to='/register' className='text-white'>Register</Link></li>
+                                <li><Link to='/feedback' className='text-white'>Feedbacks</Link></li>
                                 <li><Link to='/' className='text-white'>Home</Link></li>
                             </ul>
                         </div>
@@ -31,11 +31,11 @@ function Footer() {
 
                     <div className="col-lg-3 mb-4 mb-lg-0">
                         <div className="Doctors">
-                            <h4 className='text-primary fw-bold'>Doctors <FontAwesomeIcon icon={faUserDoctor} className="icon" /></h4>
+                            <h4 className='text-primary fw-bold'>Services <FontAwesomeIcon icon={faUserDoctor} className="icon" /></h4>
                             <ul className="list-unstyled mt-4">
-                                <li><Link to='/dentists' className='text-white'>Dentists</Link></li>
-                                <li><Link to='/dental-surgeon' className='text-white'>Dental Surgeon</Link></li>
-                                <li><Link to='/implants-maxillofacial-cosmetics' className='text-white'>Implants, Maxillofacial & Cosmetics</Link></li>
+                                <li><Link to='/treatment' className='text-white'>Treatments</Link></li>
+                                <li><Link to='/treatment/doctor/:treatmentName' className='text-white'>Dental Surgeon</Link></li>
+                                <li><Link to='/contact' className='text-white'>Contact Us</Link></li>
                             </ul>
                         </div>
                     </div>
@@ -44,16 +44,28 @@ function Footer() {
                         <div className="contact-us ">
                             <h4 className='text-primary fw-bold'>Contact Us <FontAwesomeIcon icon={faAddressBook} className="icon" /></h4>
                             <div className="subscribe mt-4">
-                                <input className="form-control" type="text" placeholder="Enter your email" />
-                            </div>
-                            <button className="btn btn-primary btn-block">Register</button>
-                            <div className="social-links mt-3 d-flex me-4">
-                                <Link to='/' className="text-white"><FontAwesomeIcon icon={faInstagram} className="social-icon" /></Link>
-                                <Link to='/' className="text-white"><FontAwesomeIcon icon={faTwitter} className="social-icon" /></Link>
-                                <Link to='/' className="text-white"><FontAwesomeIcon icon={faLinkedin} className="social-icon" /></Link>
-                                <Link to='/' className="text-white"><FontAwesomeIcon icon={faFacebook} className="social-icon" /></Link>
-                                
-                            </div>
+    <input className="form-control " type="text" placeholder="Enter your email" style={{width:'240px'}} /> 
+    <button className="btn btn-primary" style={{ height: "35px", width: '100px' }}>Register</button>
+</div>
+
+                            
+<div className="social-links text-white mt-3 d-flex me-4" >
+    <Link to='/' style={{ textDecoration: "none" }}>
+        <FontAwesomeIcon icon={faInstagram} className="social-icon " style={{ color: "white",width:'30px' }} />
+    </Link>
+    <Link to='/' style={{ textDecoration: "none" }}>
+        <FontAwesomeIcon icon={faTwitter} className="social-icon" style={{ color: "white",width:'30px' }} />
+    </Link>
+    <Link to='/' style={{ textDecoration: "none" }}>
+        <FontAwesomeIcon icon={faLinkedin} className="social-icon" style={{ color: "white",width:'30px' }} />
+    </Link>
+    <Link to='/' style={{ textDecoration: "none" }}>
+        <FontAwesomeIcon icon={faFacebook} className="social-icon" style={{ color: "white",width:'30px'}} />
+    </Link>
+</div>
+
+
+
                         </div>
                     </div>
                 </div>
