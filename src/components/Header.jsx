@@ -26,12 +26,13 @@ function Header() {
     setIsLoggedIn(false);
     sessionStorage.removeItem('isLoggedIn');
     sessionStorage.removeItem('userEmail');
+    alert("Are you sure you want to log out from our website?")
     window.location.href = "/login";
   };
 
   return (
     <>
-     <div className="d-flex justify-content-center align-items-ceter  text-white" style={{height:'22px',backgroundColor:'black'}}>
+     <div className="d-flex justify-content-center align-items-ceter  text-white " style={{height:'22px',backgroundColor:'black'}}>
       <p>{userEmail}</p>
      </div>
       <Navbar expand="lg" className="bg-black" style={{ height: '65px' }}>
@@ -83,9 +84,12 @@ function Header() {
               <Link to="/contact" className="text-white" style={{ textDecoration: 'none', color: 'white' }}>
                 Contact Us <span><FontAwesomeIcon icon={faAddressBook} fade style={{ color: "cyan" }} /></span>
               </Link>
-              <Link to="/profile" className="text-white" style={{ textDecoration: 'none', color: 'white' }}>
-                Profile <span><FontAwesomeIcon icon={faUser} fade style={{ color: "cyan" }} /></span>
-              </Link>
+              {userEmail && (
+    <Link to="/profile" className="text-white" style={{ textDecoration: 'none', color: 'white' }}>
+        Profile <span><FontAwesomeIcon icon={faUser} fade style={{ color: "cyan" }} /></span>
+    </Link>
+)}
+
             </Nav>
           </Navbar.Collapse>
         </Container>

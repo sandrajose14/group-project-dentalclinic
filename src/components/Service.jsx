@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import { Card, Col, Modal, Row } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+
 function Service(props) {
     const [show, setShow] = useState(false);
 
@@ -25,6 +27,7 @@ function Service(props) {
                     </Col>
                     <Col sm={12} md={6}>
                     <p>{props.content}</p>
+                    <Link to={'/treatment/doctor/:treatmentName'}><button className='btn btn-rounded btn-success'>Visit</button></Link>
                     </Col>
                   </Row>
             

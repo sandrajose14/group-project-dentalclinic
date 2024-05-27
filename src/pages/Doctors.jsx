@@ -1,13 +1,13 @@
 // Doctors.js
 import React, { useState, useEffect } from 'react';
 import { Button } from 'react-bootstrap';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import Appointment from '../components/Appointment'; 
 
 function Doctors({userEmail}) {
     const [selectedDoctor, setSelectedDoctor] = useState(null);
     const { treatmentName } = useParams();
-
+    const navigate = useNavigate();
     useEffect(() => {
         // console.log(treatmentName);
     }, [treatmentName]);
@@ -20,7 +20,7 @@ function Doctors({userEmail}) {
         } else {
           // Redirect to login page with a message
           alert('please login to book an appointment');
-         
+         navigate("/login")
         }
       };
 
@@ -53,7 +53,13 @@ function Doctors({userEmail}) {
         <div>
             <h1 className='text-center text-primary mt-5 mb-4 fw-bold '>Doctors</h1>
             <div className="container mb-5">
-                <h5 className='d-flex justify-content-center text-primary mb-3'>Treatment you selected :-<span className='text-warning fw-bold mx-1'>{treatmentName ? decodeURIComponent(treatmentName) : ""}</span></h5>
+            <h5 className='d-flex justify-content-center text-primary mb-3'>
+    {userEmail ? 'Treatment you selected: ' : 'Please Login and '}
+    <span className='text-warning fw-bold mx-1'>
+        {userEmail ? (treatmentName ? decodeURIComponent(treatmentName) : 'No treatment selected') : <a href="/login" className="text-decoration-none">Select a treatment</a>}
+    </span>
+</h5>
+
                 <div className="row row-cols-1 row-cols-md-3 ">
                     {doctors.map((doctor, index) => (
                         <div className="col" key={index}>

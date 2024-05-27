@@ -10,7 +10,7 @@ function Homee() {
     <>
       <div style={{ width: '100%', minHeight: '100vh', backgroundColor: '#164863' }} className='pb-3'>
         <div className="container">
-          <div className="row">
+          <div className="row pt-5" style={{height:'530px'}}>
             <div className="col-md-6 mt-3">
               <img className='rounded w-100' src="https://media.istockphoto.com/id/1349328691/photo/young-happy-woman-during-dental-procedure-at-dentists-office.jpg?b=1&s=612x612&w=0&k=20&c=yu-f0mgHCLH9s-RAJeH8hbEAYI-G6sM54CC7NX3qTi0=" alt="image" />
             </div>
@@ -31,8 +31,8 @@ function Homee() {
       <Service 
         name='bonding'
         cardUrl='https://www.acfdga.com/wp-content/uploads/2015/05/Main-Image-Cracked-Tooth.jpg'
-        modalUrl='https://brushinonbelmont.com/wp-content/uploads/2019/11/teeth-bonding.jpeg'
-        heading='After'
+        modalUrl='https://www.acfdga.com/wp-content/uploads/2015/05/Main-Image-Cracked-Tooth.jpg'
+        heading='Bonding'
         content='Dental bonding is a cosmetic dentistry procedure where a tooth-colored resin material is applied and bonded to the teeth using a special light. It&apos;s often used to repair chipped or cracked teeth, improve the appearance of discolored teeth, close gaps between teeth, or change the shape of teeth.'
       />
     </div>
@@ -86,17 +86,17 @@ function Homee() {
 
 
         {/* about section */}
-        <section style={{cursor:'pointer'}} id="about-section" className="container">
+        <section style={{cursor:'pointer'}} id="about-section" className="container mb-5">
           <h1 className='text-center text-light mt-5 fw-bold'>About Us...</h1>
           <div className="row mt-5">
-            <div className="col-md-1"></div>
-            <div className="col-md-5">
+           
+            <div className="col-md-6">
               <img className='w-100 rounded me-3' src="https://www.shutterstock.com/image-photo/medical-dentist-team-dental-office-600nw-1020554869.jpg" alt="" />
             </div>
-            <div className="col-md-5">
-              <p className='text-light ms-3'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perspiciatis repudiandae impedit laudantium minus voluptatum alias, in sapiente recusandae dolorem officia necessitatibus. Temporibus repellat, similique aspernatur distinctio ea ducimus tempora alias. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestias qui veritatis tempora ea provident maiores earum dignissimos fugiat alias ipsam fuga consectetur ad optio quam, soluta dolorum nihil voluptates molestiae.</p>
+            <div className="col-md-6" >
+              <p className='text-light ms-3'style={{alignItems:"justify"}}>At DentaKay, our mission is to provide top-quality dental care in a comfortable and friendly environment. We are dedicated to helping our patients achieve and maintain optimal oral health through comprehensive and personalized dental services. Our experienced team of dental professionals utilizes the latest technology and techniques to ensure that each patient receives the best possible care. We offer a wide range of services, including general dentistry, cosmetic dentistry, restorative dentistry, orthodontics, pediatric dentistry, and emergency dental care. Our clinic is designed to be welcoming and relaxing, helping to alleviate any anxiety or discomfort associated with dental visits. We believe in a patient-centered approach, taking the time to understand each patient's unique needs and concerns, and we are committed to building long-lasting relationships based on trust and mutual respect. With flexible scheduling options, including evenings and weekends, we make it easy to fit dental care into your busy life. At [Your Dental Clinic], your smile is our top priority, and we are here to support you every step of the way..</p>
             </div>
-            <div className="col-md-1"></div>
+           
           </div>
         </section>
       </div>

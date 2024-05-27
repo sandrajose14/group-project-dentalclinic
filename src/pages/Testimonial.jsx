@@ -47,11 +47,11 @@ function Testimonial() {
       if (response.status >= 200 && response.status < 300) {
         setReviews(response.data);
       } else {
-        toast.error('Failed to fetch reviews');
+        
       }
     } catch (error) {
       console.error('Error fetching reviews:', error);
-      toast.error('Something went wrong while fetching reviews');
+     
     }
   };
 
@@ -89,7 +89,7 @@ function Testimonial() {
         <div className="row mt-5">
           {reviews.length > 0 ? (
             reviews.map((item, index) => (
-              <div key={index} className="col-md-6 border border-1 shadow rounded" style={{backgroundColor:'lavender'}}>
+              <div key={index} className="col-md-6 border border-1 rounded" style={{backgroundColor:'lavender'}}>
                 <div className="card mb-3">
                   <div className="card-body" style={{backgroundColor:'cornsilk'}}>
                     {userEmail && <p className='text-primary'>{item.userEmail}</p>}
