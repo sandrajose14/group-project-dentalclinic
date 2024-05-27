@@ -23,7 +23,7 @@ function Homee() {
         </div>
 
        {/* service section */}
-<section className="container">
+<section className="container service-section">
   <h1 className='text-center text-white mt-5 ' style={{ fontWeight: 'bold' }}>Our Services</h1>
   {/* modal div */}
   <div className="row mt-5 mt-md-0">
@@ -94,7 +94,7 @@ function Homee() {
               <img className='w-100 rounded me-3' src="https://www.shutterstock.com/image-photo/medical-dentist-team-dental-office-600nw-1020554869.jpg" alt="" />
             </div>
             <div className="col-md-6" >
-              <p className='text-light ms-3'style={{alignItems:"justify"}}>At DentaKay, our mission is to provide top-quality dental care in a comfortable and friendly environment. We are dedicated to helping our patients achieve and maintain optimal oral health through comprehensive and personalized dental services. Our experienced team of dental professionals utilizes the latest technology and techniques to ensure that each patient receives the best possible care. We offer a wide range of services, including general dentistry, cosmetic dentistry, restorative dentistry, orthodontics, pediatric dentistry, and emergency dental care. Our clinic is designed to be welcoming and relaxing, helping to alleviate any anxiety or discomfort associated with dental visits. We believe in a patient-centered approach, taking the time to understand each patient's unique needs and concerns, and we are committed to building long-lasting relationships based on trust and mutual respect. With flexible scheduling options, including evenings and weekends, we make it easy to fit dental care into your busy life. At [Your Dental Clinic], your smile is our top priority, and we are here to support you every step of the way..</p>
+              <p className='text-light ms-3 mt-3'style={{alignItems:"justify"}}>At Dentakay, our mission is to provide top-quality dental care in a comfortable and friendly environment. We are dedicated to helping our patients achieve and maintain optimal oral health through comprehensive and personalized dental services. Our experienced team of dental professionals utilizes the latest technology and techniques to ensure that each patient receives the best possible care. We offer a wide range of services, including general dentistry, cosmetic dentistry, restorative dentistry, orthodontics, pediatric dentistry, and emergency dental care. Our clinic is designed to be welcoming and relaxing, helping to alleviate any anxiety or discomfort associated with dental visits. We believe in a patient-centered approach, taking the time to understand each patient's unique needs and concerns, and we are committed to building long-lasting relationships based on trust and mutual respect. With flexible scheduling options, including evenings and weekends, we make it easy to fit dental care into your busy life. At [Your Dental Clinic], your smile is our top priority, and we are here to support you every step of the way.</p>
             </div>
            
           </div>

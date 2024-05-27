@@ -9,7 +9,7 @@ function Service(props) {
     const handleShow = () => setShow(true);
   return (
     <>
-        <Card className="m-md-4 shadow p-md-3  w-md-100 shadow crd " onClick={handleShow}>
+        <Card className="m-md-4 shadow p-md-3  w-md-100 shadow crd mt-5" onClick={handleShow}>
                 <Card.Img variant="top" src={props.cardUrl} height={"250px"} />
                 <Card.Body>
                   <Card.Title className='text-center'><h4 style={{color:'#77B0AA'}}>{props.name}</h4></Card.Title>
