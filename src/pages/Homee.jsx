@@ -10,7 +10,7 @@ function Homee() {
     <>
       <div style={{ width: '100%', minHeight: '100vh', backgroundColor: '#164863' }} className='pb-3'>
         <div className="container">
-          <div className="row pt-5" style={{height:'530px'}}>
+          <div className="row pt-5">
             <div className="col-md-6 mt-3">
               <img className='rounded w-100' src="https://media.istockphoto.com/id/1349328691/photo/young-happy-woman-during-dental-procedure-at-dentists-office.jpg?b=1&s=612x612&w=0&k=20&c=yu-f0mgHCLH9s-RAJeH8hbEAYI-G6sM54CC7NX3qTi0=" alt="image" />
             </div>
@@ -23,7 +23,7 @@ function Homee() {
         </div>
 
        {/* service section */}
-<section className="container service-section">
+       <section className="container">
   <h1 className='text-center text-white mt-5 ' style={{ fontWeight: 'bold' }}>Our Services</h1>
   {/* modal div */}
   <div className="row mt-5 mt-md-0">
@@ -31,8 +31,8 @@ function Homee() {
       <Service 
         name='bonding'
         cardUrl='https://www.acfdga.com/wp-content/uploads/2015/05/Main-Image-Cracked-Tooth.jpg'
-        modalUrl='https://www.acfdga.com/wp-content/uploads/2015/05/Main-Image-Cracked-Tooth.jpg'
-        heading='Bonding'
+        modalUrl='https://brushinonbelmont.com/wp-content/uploads/2019/11/teeth-bonding.jpeg'
+        heading='After'
         content='Dental bonding is a cosmetic dentistry procedure where a tooth-colored resin material is applied and bonded to the teeth using a special light. It&apos;s often used to repair chipped or cracked teeth, improve the appearance of discolored teeth, close gaps between teeth, or change the shape of teeth.'
       />
     </div>

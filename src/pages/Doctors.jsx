@@ -53,11 +53,8 @@ function Doctors({userEmail}) {
         <div>
             <h1 className='text-center text-primary mt-5 mb-4 fw-bold '>Doctors</h1>
             <div className="container mb-5">
-            <h5 className='d-flex justify-content-center text-primary mb-3'>
-    {userEmail ? 'Treatment you selected: ' : 'Please Login and '}
-    <span className='text-warning fw-bold mx-1'>
-        {userEmail ? (treatmentName ? decodeURIComponent(treatmentName) : 'No treatment selected') : <a href="/login" className="text-decoration-none">Select a treatment</a>}
-    </span>
+            <h5 className='d-flex justify-content-center text-primary mb-3'>Treatment : <span className='text-warning fw-bold'>{treatmentName}</span>
+    
 </h5>
 
                 <div className="row row-cols-1 row-cols-md-3 ">
