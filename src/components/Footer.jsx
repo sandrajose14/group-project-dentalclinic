@@ -34,7 +34,7 @@ function Footer() {
                             <h4 className='text-primary fw-bold'>Services <FontAwesomeIcon icon={faUserDoctor} className="icon" /></h4>
                             <ul className="list-unstyled mt-4">
                                 <li><Link to='/treatment' className='text-white'>Treatments</Link></li>
-                                <li><Link to='/treatment/doctor/:treatmentName' className='text-white'>Dental Surgeon</Link></li>
+                                <li><Link to='/treatment' className='text-white'>Dental Surgeon ( view after selecting treatment )</Link></li>
                                 <li><Link to='/contact' className='text-white'>Contact Us</Link></li>
                             </ul>
                         </div>
@@ -44,7 +44,7 @@ function Footer() {
                         <div className="contact-us ">
                             <h4 className='text-primary fw-bold'>Contact Us <FontAwesomeIcon icon={faAddressBook} className="icon" /></h4>
                             <div className="subscribe mt-4">
-    <input className="form-control " type="text" placeholder="Enter your email" style={{width:'240px'}} /> 
+    <input className="form-control " type="text" placeholder="Enter your email" style={{width:'220px'}} /> 
     <button className="btn btn-primary" style={{ height: "35px", width: '100px' }}>Register</button>
 </div>
 

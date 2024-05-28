@@ -127,7 +127,7 @@ function Appointment({ show, handleClose, selectedDoctor, selectedTreatment }) {
               />
              <input
     type="text"
-    placeholder='User Email' // Change the placeholder to indicate it's for user email
+    placeholder='User Email (add login userEmail)' // Change the placeholder to indicate it's for user email
     className='form-control mb-3'
     onChange={(e) => setBooking({ ...booking, userEmail: e.target.value })}
   />
