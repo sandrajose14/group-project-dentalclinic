@@ -1,12 +1,11 @@
-import { faGoogle } from '@fortawesome/free-brands-svg-icons';
-import { faLinkedin } from '@fortawesome/free-brands-svg-icons/faLinkedin';
+import { faGoogle, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope, faLock, faUser } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useState } from 'react';
 import './Authentication.css';
 import { RegisterApi, loginApi } from '../services/callApi';
 
-function Authentication({ setIsLoggedIn,setUserEmail }) {
+function Authentication({ setIsLoggedIn, setUserEmail }) {
   const [register, setRegister] = useState({
     userName: '',
     userEmail: '',
@@ -24,7 +23,7 @@ function Authentication({ setIsLoggedIn,setUserEmail }) {
   };
 
   const validatePassword = (password) => {
-    const passwordValid = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$/; // At least 8 characters, 1 letter, and 1 number
+    const passwordValid = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$/; // At least 6 characters, 1 letter, and 1 number
     return passwordValid.test(password);
   };
 
@@ -41,7 +40,7 @@ function Authentication({ setIsLoggedIn,setUserEmail }) {
         const response = await RegisterApi(register);
         if (response.status >= 200 && response.status < 300) {
           alert('Profile created successfully');
-          window.location.href = '/login';
+          window.location.href = '/login'; // Navigate to the login page
         } else {
           alert('Something went wrong');
         }
@@ -52,7 +51,6 @@ function Authentication({ setIsLoggedIn,setUserEmail }) {
     }
   };
 
- 
   const handleLogin = async () => {
     try {
       const response = await loginApi();
@@ -70,7 +68,7 @@ function Authentication({ setIsLoggedIn,setUserEmail }) {
 
         if (validUser) {
           alert('Logged in successfully');
-          setIsLoggedIn(true); /// Update the isLoggedIn state
+          setIsLoggedIn(true); // Update the isLoggedIn state
           setUserEmail(userEmail);
           sessionStorage.setItem('isLoggedIn', true); // Store login state in sessionStorage
           sessionStorage.setItem('userEmail', userEmail); // Store user email in sessionStorage
@@ -87,7 +85,6 @@ function Authentication({ setIsLoggedIn,setUserEmail }) {
       alert('Something went wrong');
     }
   };
-
 
   const [isSignUpMode, setIsSignUpMode] = useState(false);
 
@@ -126,8 +123,6 @@ function Authentication({ setIsLoggedIn,setUserEmail }) {
             <button type="button" className="btn" onClick={handleLogin}>
               Sign In
             </button>
-           
-          
           </form>
           <form action="#" className="sign-up-form loginForm">
             <h2 className="title">Sign up</h2>
@@ -178,7 +173,7 @@ function Authentication({ setIsLoggedIn,setUserEmail }) {
           <div className="content">
             <h3 className="loginh3">New here?</h3>
             <p className="loginp">
-              A smile remains the most inexpensive gift I can bestow on anyone and yet its powers can vanquish kingdoms
+              A smile remains the most inexpensive gift I can bestow on anyone and yet its powers can vanquish kingdoms.
             </p>
             <button className="btn transparent" onClick={handleSignUpClick}>
               Sign up
