@@ -13,7 +13,7 @@ function Contactus() {
                 <div className="row p-4 shadow" style={{ backgroundColor: 'lavender' }}>
                     <div className="col-12 col-md-6 mb-4 mb-md-0">
                         <div className="mb-2">
-                            <h2>We take your dental health seriously and provide top-notch care.</h2>
+                            <h2>We take your dental health seriously & provide top-notch care.</h2>
                             <p>Schedule your dental appointment today for a healthy smile. Our experienced professionals, convenient hours, and caring team await you.</p>
                         </div>
                         <div className="row mb-4">
